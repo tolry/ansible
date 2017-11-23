@@ -1,0 +1,8 @@
+peco_url: "https://github.com/peco/peco/releases/download/v0.5.1/peco_linux_amd64.tar.gz"
+peco_binary: "{{ ansible_user_dir }}/bin/peco"
+peco_temporary_location: "/tmp/peco_linux_amd64/peco"
+
+vim_repository: "git@github.com:tolry/vim.git"
+vim_checkout: "{{ ansible_user_dir }}/.vim"
+vim_vimrc: "{{ ansible_user_dir }}/.vimrc"
+

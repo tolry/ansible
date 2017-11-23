@@ -1,0 +1,12 @@
+- name: "peco download"
+  unarchive:
+    remote_src: true
+    src: "{{ peco_url }}"
+    dest: /tmp
+    creates: "{{ peco_temporary_location }}"
+- name: "peco install"
+  copy:
+    src: "{{ peco_temporary_location }}"
+    dest: "{{ peco_binary }}"
+    mode: 0755
+

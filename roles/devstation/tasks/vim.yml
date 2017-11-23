@@ -1,0 +1,13 @@
+- name: vim package
+  apt:
+      name: "vim"
+      state: latest
+  become: true
+- name: vim git repository
+  git:
+      repo: "{{ vim_repository }}"
+      dest: "{{ vim_checkout }}"
+- name: vim symlink
+  file:
+      src: "{{ vim_checkout }}/vimrc"
+      dest: "{{ vim_vimrc }}"

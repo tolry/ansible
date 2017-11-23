@@ -1,0 +1,4 @@
+#- include_tasks: git.yml
+- include_tasks: vim.yml
+#- include_tasks: fish.yml
+- include_tasks: peco.yml
