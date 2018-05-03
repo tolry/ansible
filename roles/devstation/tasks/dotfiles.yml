@@ -1,0 +1,5 @@
+- name: dotilfes repository
+  git:
+      repo: "{{ dotfiles_repository }}"
+      dest: "{{ dotfiles_dir }}"
+
