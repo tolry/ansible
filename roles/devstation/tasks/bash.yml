@@ -1,0 +1,6 @@
+- name: source dotfile bashrc
+  lineinfile:
+    line: ". {{ dotfiles_dir }}/bashrc"
+    path: "{{ ansible_user_dir }}/.bashrc"
+    state: present
+    create: yes

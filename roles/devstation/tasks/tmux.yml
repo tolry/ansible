@@ -1,0 +1,12 @@
+- name: tmux conf
+  lineinfile:
+    line: "source-file {{ dotfiles_dir }}/tmux-conf.conf"
+    path: "{{ ansible_user_dir }}/.tmux.conf"
+    state: present
+    create: yes
+
+- name: tmux theme
+  lineinfile:
+    line: "source-file {{ dotfiles_dir }}/tmux-theme.conf"
+    path: "{{ ansible_user_dir }}/.tmux.conf"
+    state: present

@@ -7,7 +7,8 @@
   git:
       repo: "{{ vim_repository }}"
       dest: "{{ vim_checkout }}"
-- name: vim symlink
-  file:
-      src: "{{ vim_checkout }}/vimrc"
-      dest: "{{ vim_vimrc }}"
+- name: include vim config
+  lineinfile:
+      line: "source {{ vim_checkout }}/vimrc"
+      path: "{{ ansible_user_dir }}/.vimrc"
+      state: present
