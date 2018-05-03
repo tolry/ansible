@@ -1,3 +1,4 @@
 #!/bin/bash
+ansible-galaxy install geerlingguy.composer
 
 ansible-playbook -i hosts.yml --ask-become playbook.yml
