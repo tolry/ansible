@@ -1,6 +1,0 @@
-#- include_tasks: git.yml
-- include_tasks: dotfiles.yml
-- include_tasks: vim.yml
-- include_tasks: peco.yml
-- include_tasks: bash.yml
-- include_tasks: tmux.yml

@@ -1,0 +1,3 @@
+dotfiles_repository: "git@github.com:tolry/dotfiles.git"
+dotfiles_dir: "{{ ansible_user_dir }}/dotfiles"
+

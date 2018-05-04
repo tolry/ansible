@@ -1,0 +1,5 @@
+peco_url: "https://github.com/peco/peco/releases/download/v0.5.1/peco_linux_amd64.tar.gz"
+peco_binary: "{{ ansible_user_dir }}/bin/peco"
+peco_temporary_location: "/tmp/peco_linux_amd64/peco"
+
+

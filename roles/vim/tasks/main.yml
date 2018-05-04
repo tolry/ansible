@@ -3,12 +3,13 @@
       name: "vim"
       state: latest
   become: true
+
 - name: vim git repository
   git:
       repo: "{{ vim_repository }}"
-      dest: "{{ vim_checkout }}"
+      dest: "{{ ansible_user_dir }}/.vim"
 - name: include vim config
   lineinfile:
-      line: "source {{ vim_checkout }}/vimrc"
-      path: "{{ ansible_user_dir }}/.vimrc"
+      line: "source {{ ansible_user_dir}}/.vim/vimrc"
+      dest: "{{ ansible_user_dir }}/.vimrc"
       state: present

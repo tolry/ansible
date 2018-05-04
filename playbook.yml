@@ -1,4 +1,9 @@
 - hosts: all
   roles:
-      - devstation
+      #- geerlingguy.composer
+      - dotfiles
+      - vim
+      - peco
+      - bash
+      - tmux
 
