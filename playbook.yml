@@ -1,6 +1,8 @@
 - hosts: all
+  vars:
+      dotfiles_dir: "{{ ansible_user_dir }}/dotfiles"
   roles:
-      #- geerlingguy.composer
+      - composer
       - dotfiles
       - vim
       - peco
