@@ -13,3 +13,4 @@
       line: "source {{ ansible_user_dir}}/.vim/vimrc"
       dest: "{{ ansible_user_dir }}/.vimrc"
       state: present
+      create: yes
