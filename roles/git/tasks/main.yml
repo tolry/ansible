@@ -1,0 +1,32 @@
+---
+- name: "symlink gitignore"
+  file:
+    src: "{{ dotfiles_dir }}/gitignore"
+    dest: "{{ ansible_user_dir }}/.gitignore"
+    force: true
+    state: link
+
+- name: "git settings"
+  git_config:
+      name: "{{ item.key }}"
+      value: "{{ item.value }}"
+      scope: global
+  with_items:
+    - { key: "user.name", value: "{{ devmachine_user_name }}" }
+    - { key: "user.email", value: "{{ devmachine_user_email }}" }
+    - { key: "color.ui", value: auto }
+    - { key: "core.editor", value: vim }
+    - { key: "core.excludesfile", value: "{{ ansible_user_dir }}/.gitignore" }
+    - { key: "push.default", value: "current" }
+    - { key: "branch.autosetuprebase", value: always }
+    - { key: "fetch.prune", value: "true" }
+    - { key: "pull.rebase", value: "true" }
+    - { key: "rebase.autoStash", value: "true" }
+    - { key: "rerere.enabled", value: "true" }
+    - { key: "diff.colorMoved", value: plain }
+    - { key: "alias.st", value: status }
+    - { key: "alias.co", value: checkout }
+    - { key: "alias.ci", value: commit }
+    - { key: "alias.br", value: branch }
+    - { key: "alias.staged", value: "diff --cached" }
+    - { key: "alias.graph", value: "log --graph --all --pretty=format:\"%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset\" --abbrev-commit --date=relative" }
