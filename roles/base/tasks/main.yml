@@ -5,3 +5,6 @@
     state: present
   with_items:
     - git
+    - vim
+    - tmux
+    - ranger
