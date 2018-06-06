@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ansible-playbook -i hosts.yml --ask-become playbook.yml
+cd $(dirname $0)
+
+ansible-playbook -i hosts.yml --ask-become playbook.yml --extra-vars "@config.json"

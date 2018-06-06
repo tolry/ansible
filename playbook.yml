@@ -1,8 +1,6 @@
 - hosts: all
   vars:
       dotfiles_dir: "{{ ansible_user_dir }}/dotfiles"
-      #devmachine_user_name: "Tobias Olry"
-      #devmachine_user_email: "tobias.olry@gmail.com"
   roles:
       - base
       - git
