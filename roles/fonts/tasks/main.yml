@@ -5,5 +5,3 @@
     name: "{{ item }}"
   with_items:
       - fonts-noto-color-emoji
-
-
