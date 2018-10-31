@@ -1,0 +1,40 @@
+---
+- name: add ppa
+  become: true
+  apt_repository:
+    state: present
+    repo: ppa:ondrej/php
+
+- name: add base packages
+  become: true
+  apt:
+    name: php{{ item }}
+    state: present
+    update_cache: true
+  loop:
+    - 7.1
+    - 7.2
+    - 7.3
+
+- name: version agnostic extensions
+  become: true
+  apt:
+    name: php-{{ item }}
+    state: present
+  loop:
+    - memcached
+
+- name: extensions
+  include_tasks: extensions.yml
+  loop:
+    - 7.1
+    - 7.2
+    - 7.3
+  loop_control:
+    loop_var: php_version
+
+- name: set default version
+  become: true
+  alternatives:
+    name: php
+    path: /usr/bin/php7.1

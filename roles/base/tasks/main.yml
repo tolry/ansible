@@ -1,10 +1,16 @@
 ---
+- name: "use bin folder exists?"
+  file:
+    path: "{{ ansible_user_dir }}/bin"
+    state: directory
+
 - name: "install base packages"
   apt:
     name: "{{ item }}"
     state: present
   become: true
   with_items:
+    - curl
     - git
     - vim
     - tmux

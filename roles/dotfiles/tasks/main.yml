@@ -1,4 +1,4 @@
-- name: dotfiles repository
+- name: dotfiles repository from {{ dotfiles_repository }}
   git:
       repo: "{{ dotfiles_repository }}"
       dest: "{{ dotfiles_dir }}"

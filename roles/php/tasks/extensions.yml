@@ -1,0 +1,10 @@
+---
+- name: extensions for {{ php_version }}
+  become: true
+  apt:
+    name: php{{ php_version }}-{{ item }}
+    state: present
+  loop:
+    - common
+    - curl
+    - intl

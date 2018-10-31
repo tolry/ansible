@@ -4,6 +4,7 @@
   roles:
       - base
       - git
+      - php
       - composer
       - dotfiles
       - vim
