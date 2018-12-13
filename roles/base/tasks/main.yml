@@ -14,5 +14,5 @@
     - git
     - vim
     - tmux
-    - ranger
     - silversearcher-ag
+    - neofetch
