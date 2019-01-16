@@ -29,4 +29,4 @@
     - { key: "alias.ci", value: commit }
     - { key: "alias.br", value: branch }
     - { key: "alias.staged", value: "diff --cached" }
-    - { key: "alias.graph", value: "log --graph --all --pretty=format:\"%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset\" --abbrev-commit --date=relative" }
+    - { key: "alias.graph", value: "log --color --graph --oneline --decorate" }
