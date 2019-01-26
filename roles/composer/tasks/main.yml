@@ -10,6 +10,7 @@
   with_items:
     - { name: "fabpot/php-cs-fixer", version: "^2.0"}
     - { name: "squizlabs/php_codesniffer", version: "@stable"}
+    - { name: "humbug/box", version: "@stable"}
     - { name: "phpmd/phpmd", version: "@stable"}
     - { name: "hirak/prestissimo", version: "@stable"}
     - { name: "psy/psysh", version: "@stable"}
