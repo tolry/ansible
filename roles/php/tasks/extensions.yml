@@ -2,17 +2,16 @@
 - name: extensions for {{ php_version }}
   become: true
   apt:
-    name: php{{ php_version }}-{{ item }}
+    name:
+        - php{{ php_version}}-common
+        - php{{ php_version}}-cli
+        - php{{ php_version}}-fpm
+        - php{{ php_version}}-curl
+        - php{{ php_version}}-intl
+        - php{{ php_version}}-mysql
+        - php{{ php_version}}-opcache
+        - php{{ php_version}}-zip
+        - php{{ php_version}}-xml
+        - php{{ php_version}}-json
+        - php{{ php_version}}-readline
     state: present
-  loop:
-    - common
-    - cli
-    - fpm
-    - curl
-    - intl
-    - mysql
-    - opcache
-    - zip
-    - xml
-    - json
-    - readline

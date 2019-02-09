@@ -5,14 +5,13 @@
     state: directory
 
 - name: "install base packages"
-  apt:
-    name: "{{ item }}"
-    state: present
   become: true
-  with_items:
-    - curl
-    - git
-    - vim
-    - tmux
-    - silversearcher-ag
-    - neofetch
+  apt:
+    name:
+        - curl
+        - git
+        - vim
+        - tmux
+        - silversearcher-ag
+        - neofetch
+    state: present

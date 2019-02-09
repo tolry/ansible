@@ -8,21 +8,19 @@
 - name: add base packages
   become: true
   apt:
-    name: php{{ item }}
+    name:
+        - php7.1
+        - php7.2
+        - php7.3
     state: present
     update_cache: true
-  loop:
-    - 7.1
-    - 7.2
-    - 7.3
 
 - name: version agnostic extensions
   become: true
   apt:
-    name: php-{{ item }}
+    name:
+        - php-memcached
     state: present
-  loop:
-    - memcached
 
 - name: extensions
   include_tasks: extensions.yml
@@ -38,3 +36,10 @@
   alternatives:
     name: php
     path: /usr/bin/php7.1
+
+- name: install symfony cli
+  get_url:
+      url: "https://get.symfony.com/cli/v4.2.8/symfony_linux_amd64"
+      dest: "{{ ansible_user_dir }}/bin/symfony"
+      mode: 0755
+      checksum: "sha256:a4ab67ca343ca0549414bfd838a73cd96a3a0ea08d7d0e18527f23e99ca7f000"
