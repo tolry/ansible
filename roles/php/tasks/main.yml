@@ -35,7 +35,7 @@
   become: true
   alternatives:
     name: php
-    path: /usr/bin/php7.1
+    path: /usr/bin/php7.2
 
 - name: install symfony cli
   get_url:
