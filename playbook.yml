@@ -5,7 +5,8 @@
       - base
       - git
       - php
-      - composer
+      - role: composer
+        tags: [composer]
       - dotfiles
       - vim
       - peco
