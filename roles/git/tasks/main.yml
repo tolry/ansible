@@ -23,6 +23,7 @@
     - { key: "pull.rebase", value: "true" }
     - { key: "rebase.autoStash", value: "true" }
     - { key: "rerere.enabled", value: "true" }
+    - { key: "diff.noprefix", value: "true" }
     - { key: "diff.colorMoved", value: plain }
     - { key: "alias.st", value: status }
     - { key: "alias.co", value: checkout }
