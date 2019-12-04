@@ -9,9 +9,9 @@
   become: true
   apt:
     name:
-        - php7.1
         - php7.2
         - php7.3
+        - php7.4
     state: present
     update_cache: true
 
@@ -25,9 +25,9 @@
 - name: extensions
   include_tasks: extensions.yml
   loop:
-    - 7.1
     - 7.2
     - 7.3
+    - 7.4
   loop_control:
     loop_var: php_version
 
@@ -35,7 +35,7 @@
   become: true
   alternatives:
     name: php
-    path: /usr/bin/php7.2
+    path: /usr/bin/php7.4
 
 - name: install symfony cli
   get_url:
