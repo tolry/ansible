@@ -15,4 +15,5 @@
         - silversearcher-ag
         - neofetch
         - vifm
+        - tldr
     state: present
