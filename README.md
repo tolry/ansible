@@ -22,3 +22,17 @@ vi config.json
 
 ./run
 ```
+
+### keyboard
+
+* Generic 105 (intl.)
+* english
+* English (US)
+* Variant: English (intl. with AltGr deadkeys)
+* emoji input *todo*
+
+
+### fonts
+
+todo
+
