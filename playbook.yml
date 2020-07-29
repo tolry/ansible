@@ -9,7 +9,6 @@
         tags: [composer]
       - dotfiles
       - vim
-      - peco
       - bash
       - tmux
       - fonts
