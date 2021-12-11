@@ -1,0 +1,9 @@
+- name: download nord-gnome-terminal
+  git:
+      repo: "https://github.com/arcticicestudio/nord-gnome-terminal.git"
+      dest: "{{ ansible_user_dir }}/tmp/nord-gnome-terminal"
+
+- name: install nord-gnome-terminal
+  command: "{{ ansible_user_dir }}/tmp/nord-gnome-terminal/src/nord.sh"
+
+

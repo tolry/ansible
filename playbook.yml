@@ -11,4 +11,6 @@
       - vim
       - bash
       - tmux
+      - role: gnome-terminal
+        tags: [gnome-terminal]
 
