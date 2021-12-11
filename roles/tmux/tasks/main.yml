@@ -1,3 +1,5 @@
+# @todo install tmux-xpanes
+
 - name: tmux conf
   lineinfile:
     line: "source-file {{ dotfiles_dir }}/tmux-conf.conf"

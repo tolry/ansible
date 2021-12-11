@@ -1,14 +1,13 @@
 ---
 - name: "install composer for user"
   get_url:
-      url: "https://getcomposer.org/composer.phar"
+      url: "https://getcomposer.org/download/latest-stable/composer.phar"
       dest: "{{ ansible_user_dir }}/bin/composer"
       mode: a+x
 
 - name: "install global composer deps"
-  command: "creates={{ ansible_user_dir }}/.config/composer/vendor/{{ item.name }} {{ ansible_user_dir }}/bin/composer global require {{ item.name }} {{ item.version }}"
+  command: 
+    creates: "{{ ansible_user_dir }}/.config/composer/vendor/{{ item.name }}"
+    cmd:  "{{ ansible_user_dir }}/bin/composer global require {{ item.name }} {{ item.version }}"
   with_items:
-    - { name: "fabpot/php-cs-fixer", version: "^2.0"}
-    - { name: "squizlabs/php_codesniffer", version: "@stable"}
-    - { name: "phpmd/phpmd", version: "@stable"}
     - { name: "psy/psysh", version: "@stable"}

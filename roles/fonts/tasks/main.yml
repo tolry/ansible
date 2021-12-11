@@ -1,6 +1,0 @@
----
-- name: "install noto-color-emoji"
-  become: true
-  apt:
-    name:
-      - fonts-noto-color-emoji

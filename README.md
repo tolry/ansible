@@ -15,6 +15,8 @@ ssh-keygen -t rsa -b 4096 -C "some@email.com"
 
 ``` bash
 cd $(HOME)
+mkdir setup
+cd setup
 git clone git@github.com:tolry/ansible.git
 cd ansible
 cp config.dist.json config.json
@@ -34,5 +36,5 @@ vi config.json
 
 ### fonts
 
-todo
+* use powerline enabled font (e.g. from vim plugged/fonts folder)
 

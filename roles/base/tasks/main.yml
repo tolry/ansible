@@ -1,5 +1,5 @@
 ---
-- name: "use bin folder exists?"
+- name: "user bin folder exists?"
   file:
     path: "{{ ansible_user_dir }}/bin"
     state: directory
@@ -16,4 +16,11 @@
         - neofetch
         - vifm
         - tldr
+        - htop
     state: present
+
+      # needs newer ansible version or similar?
+      #- name: Install snap packages
+      #community.general.snap:
+      #name:
+      #- keepassxc

@@ -9,9 +9,7 @@
   become: true
   apt:
     name:
-        - php7.2
-        - php7.3
-        - php7.4
+        - php8.0
     state: present
     update_cache: true
 
@@ -25,8 +23,7 @@
 - name: extensions
   include_tasks: extensions.yml
   loop:
-    - 7.3
-    - 7.4
+    - 8.0
   loop_control:
     loop_var: php_version
 
@@ -34,11 +31,14 @@
   become: true
   alternatives:
     name: php
-    path: /usr/bin/php7.4
+    path: /usr/bin/php8.0
 
-- name: install symfony cli
+- name: download symfony cli
   get_url:
-      url: "https://get.symfony.com/cli/v4.2.8/symfony_linux_amd64"
-      dest: "{{ ansible_user_dir }}/bin/symfony"
-      mode: 0755
-      checksum: "sha256:a4ab67ca343ca0549414bfd838a73cd96a3a0ea08d7d0e18527f23e99ca7f000"
+      url: "https://github.com/symfony/cli/releases/download/v4.26.10/symfony_linux_amd64.gz"
+      dest: "{{ ansible_user_dir }}/bin/symfony.gz"
+
+- name: extract symfony cli
+  command:
+      cmd: "gunzip {{ ansible_user_dir }}/bin/symfony.gz"
+      creates: "{{ ansible_user_dir }}/bin/symfony.gz"
