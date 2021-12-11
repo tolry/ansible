@@ -31,4 +31,4 @@
     - { key: "alias.br", value: branch }
     - { key: "alias.staged", value: "diff --cached" }
     - { key: "alias.graph", value: "log --color --graph --oneline --decorate" }
-    - { key: "commit.gpgsign", value: true }
+    - { key: "commit.gpgsign", value: "true" }
