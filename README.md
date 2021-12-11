@@ -36,5 +36,5 @@ vi config.json
 
 ### fonts
 
-* use powerline enabled font (e.g. from vim plugged/fonts folder)
+* install a nerdfont as gnome monospace default (using `tweaks`)
 
