@@ -1,5 +1,15 @@
 # @todo install tmux-xpanes
 
+- name: "check reqired TPM folder"
+  file:
+    path: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+    state: directory
+
+- name: clone TPM repository
+  git:
+      repo: "https://github.com/tmux-plugins/tpm"
+      dest: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+
 - name: tmux conf
   lineinfile:
     line: "source-file {{ dotfiles_dir }}/tmux-conf.conf"
