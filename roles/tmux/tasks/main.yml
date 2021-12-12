@@ -1,5 +1,3 @@
-# @todo install tmux-xpanes
-
 - name: "check reqired TPM folder"
   file:
     path: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
@@ -16,3 +14,10 @@
     dest: "{{ ansible_user_dir }}/.tmux.conf"
     state: present
     create: yes
+
+- name: install tmux-xpanes
+  get_url:
+    url: "https://raw.githubusercontent.com/greymd/tmux-xpanes/v4.1.3/bin/xpanes"
+    dest: "{{ ansible_user_dir }}/bin/xpanes"
+    mode: 0755
+
