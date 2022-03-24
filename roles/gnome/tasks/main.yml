@@ -6,4 +6,7 @@
 - name: install nord-gnome-terminal
   command: "{{ ansible_user_dir }}/tmp/nord-gnome-terminal/src/nord.sh"
 
+- name: remove trash bin from desktop
+  command: "gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false"
+
 

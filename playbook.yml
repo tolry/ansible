@@ -5,12 +5,10 @@
       - base
       - git
       - php
-      - role: composer
-        tags: [composer]
+      - { role: composer, tags: [composer] }
       - dotfiles
       - vim
       - bash
       - tmux
-      - role: gnome-terminal
-        tags: [gnome-terminal]
+      - { role: gnome, tags: [gnome], when: desktop }
 
