@@ -33,12 +33,14 @@
     name: php
     path: /usr/bin/php8.0
 
-- name: download symfony cli
-  get_url:
-      url: "https://github.com/symfony/cli/releases/download/v4.26.10/symfony_linux_amd64.gz"
-      dest: "{{ ansible_user_dir }}/bin/symfony.gz"
+- name: install symfony cli repo
+  become: true
+  apt_repository:
+    repo: "deb [trusted=yes] https://repo.symfony.com/apt/ /"
+    filename: symfony-cli
 
-- name: extract symfony cli
-  command:
-      cmd: "gunzip {{ ansible_user_dir }}/bin/symfony.gz"
-      creates: "{{ ansible_user_dir }}/bin/symfony.gz"
+- name: install symfony cli
+  become: true
+  apt:
+    name: symfony-cli
+    state: present
