@@ -32,3 +32,23 @@
     - { key: "alias.staged", value: "diff --cached" }
     - { key: "alias.graph", value: "log --color --graph --oneline --decorate" }
     - { key: "commit.gpgsign", value: "true" }
+
+
+- name: "download github-cli keyring"
+  become: true
+  get_url:
+    url: https://cli.github.com/packages/githubcli-archive-keyring.gpg
+    dest: /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+- name: "install github-cli GH repository"
+  become: true
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+    state: present
+    filename: github-gh
+
+- name: "install github-cli GH"
+  become: true
+  apt:
+    name: gh
+    state: present
