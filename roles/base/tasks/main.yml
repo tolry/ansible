@@ -17,6 +17,7 @@
         - vifm
         - tldr
         - htop
+        - bat
     state: present
 
       # needs newer ansible version or similar?
